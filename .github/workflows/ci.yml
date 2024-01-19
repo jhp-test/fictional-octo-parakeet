@@ -19,13 +19,11 @@ jobs:
       main-branch-name: main
       number-of-agents: 3
       init-commands: |
-        npx nx-cloud start-ci-run --distributes-on="8 linux-medium-js" --stop-agents-after="build"
+        npx nx-cloud start-ci-run --distributes-on="8 linux-medium-js" --stop-agents-after="e2e"
       parallel-commands: |
         npx nx-cloud record -- npx nx format:check
       parallel-commands-on-agents: |
-        npx nx affected --target=lint --parallel=3
-        npx nx affected --target=test --parallel=3 --ci --code-coverage
-        npx nx affected --target=build --parallel=3
+        npx nx affected --targets=lint test build e2e --parallel=1 --ci --code-coverage
 
   agents:
     name: Nx Cloud - Agents
