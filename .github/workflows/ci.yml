@@ -24,6 +24,6 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
-      - run: npx nx-cloud start-ci-run --distribute-on="4 linux-medium-js"
+      - run: npx nx-cloud start-ci-run --distribute-on="2 linux-medium-js"
       - run: npx nx-cloud record -- nx format:check
       - run: npx nx affected -t=lint,test,build,e2e --parallel=1
