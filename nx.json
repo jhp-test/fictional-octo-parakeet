@@ -1,6 +1,4 @@
 {
-  "nxCloudAccessToken": "MzYwMWNmYzgtMTYwZi00MDJkLWFlYTAtZGYyN2YyMGNkNDc0fHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "https://staging.nx.app",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
@@ -48,7 +46,10 @@
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s",
-      "!{projectRoot}/test-setup.[jt]s"
+      "!{projectRoot}/test-setup.[jt]s",
+      "!{projectRoot}/cypress/**/*",
+      "!{projectRoot}/**/*.cy.[jt]s?(x)",
+      "!{projectRoot}/cypress.config.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -58,6 +59,13 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nx/react": {
+      "application": {
+        "babel": true
+      }
     }
-  }
+  },
+  "nxCloudAccessToken": "YTYzOThmOWEtNWUyMS00NWM1LWJmZTUtN2M1YTUzNTI0NWQ1fHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "http://localhost:4203"
 }
